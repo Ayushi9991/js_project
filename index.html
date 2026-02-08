@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini E-Commerce Store</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Mini E-Commerce Store</h1>
+    <button class="cart-btn" onclick="openCart()">
+      Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <div class="container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()" />
+      <select id="categoryFilter" onchange="filterCategory()">
+        <option value="all">All Categories</option>
+        <option value="fashion">Fashion</option>
+        <option value="electronics">Electronics</option>
+        <option value="shoes">Shoes</option>
+      </select>
+    </div>
+
+    <div class="products" id="productList"></div>
+  </div>
+
+  <!-- CART MODAL -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-box">
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <p class="total">Total: ₹<span id="totalPrice">0</span></p>
+      <button class="close-btn" onclick="closeCart()">Close</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
